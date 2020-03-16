@@ -282,6 +282,11 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
     }
 
     @Override
+    public void toast(String message) {
+        Utils.showToast(mContext,message);
+    }
+
+    @Override
     public void logOut() {
 
     }

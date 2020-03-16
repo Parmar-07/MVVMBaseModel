@@ -13,7 +13,7 @@ public class Utils {
             ((BaseActivity) mContext).showMessageDialog(mContext.getString(R.string.no_internet_connection),
                     mContext.getString(R.string.no_internet_connection_msg), Utils.DialogRequestCode.NO_INTERNET);
         } else {
-            Toast.makeText(mContext, mContext.getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
+            showToast(mContext,mContext.getString(R.string.no_internet_connection_msg));
         }
     }
 
@@ -22,10 +22,14 @@ public class Utils {
         if (mContext instanceof BaseActivity) {
             ((BaseActivity) mContext).showMessageDialog(mContext.getString(R.string.error_title), msg, R.drawable.ic_error, Utils.DialogRequestCode.ON_ERROR);
         } else {
-            Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+            showToast(mContext,msg);
         }
     }
 
+
+    public static void showToast(Context mContext, String msg) {
+        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+    }
 
     public interface DialogRequestCode {
 

@@ -13,4 +13,6 @@
     <string name="error_title">Oops!</string>
     <string name="dialog1">Dialog 1</string>
     <string name="dialog2">Dialog2</string>
+    <string name="listView1">ListView 1</string>
+    <string name="listView2">ListView 2</string>
 </resources>
