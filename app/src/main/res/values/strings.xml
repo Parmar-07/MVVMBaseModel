@@ -15,4 +15,5 @@
     <string name="dialog2">Dialog2</string>
     <string name="listView1">ListView 1</string>
     <string name="listView2">ListView 2</string>
+    <string name="stepper">Stepper</string>
 </resources>

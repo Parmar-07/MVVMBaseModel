@@ -30,7 +30,7 @@ public class MainVM extends BaseViewModel<MainNavigator> {
 
             ArrayList<ListItemModel> arrayList = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
-                arrayList.add(new ListItemModel("Item " + (i + 1),"SubItem " + (i + 1)));
+                arrayList.add(new ListItemModel("Item " + (i + 1), "SubItem " + (i + 1)));
             }
             mNavigator.onCustomItemList(arrayList);
 
@@ -43,6 +43,11 @@ public class MainVM extends BaseViewModel<MainNavigator> {
 
             mNavigator.onSimpleItemList(arrayList);
         }
+    }
+
+
+    public void openStepper() {
+        mNavigator.navigateStepper();
     }
 
 

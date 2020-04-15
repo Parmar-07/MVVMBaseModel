@@ -1,0 +1,26 @@
+{
+  "Steppers":[
+    {
+      "Id":"1",
+      "Description":"Step 1",
+      "BackAllowed":true,
+      "StepCompleted":false
+    },
+    {
+      "Id":"2",
+      "Description":"Step 2",
+      "BackAllowed":true,
+      "StepCompleted":false
+    },
+    {
+      "Id":"3",
+      "Description":"Step 3",
+      "BackAllowed":true,
+      "StepCompleted":false
+    }
+  ],
+
+  "subStep1":2,
+  "subStep2":0,
+  "subStep3":1
+}

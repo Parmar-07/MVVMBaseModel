@@ -9,6 +9,8 @@ import com.project.mvvmbasemodel.base.GenericAdapter;
 import com.project.mvvmbasemodel.databinding.ActivityMainBinding;
 import com.project.mvvmbasemodel.databinding.ListItem1Binding;
 import com.project.mvvmbasemodel.databinding.ListItem2Binding;
+import com.project.mvvmbasemodel.features.Utils;
+import com.project.mvvmbasemodel.features.stepper.StepperActivity;
 import com.project.mvvmbasemodel.model.ListItemModel;
 import com.project.mvvmbasemodel.view_model.MainVM;
 
@@ -58,6 +60,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> impl
         bindCustomListItem(arrayList);
     }
 
+    @Override
+    public void navigateStepper() {
+        Utils.switchToActivity(this, StepperActivity.class);
+    }
+
     private void bindSimpleListItem(ArrayList<String> arrayList) {
         GenericAdapter<String, ListItem1Binding> adapter = new GenericAdapter<String, ListItem1Binding>(mContext) {
             @Override
@@ -99,7 +106,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> impl
         mBinding.recyclerView.setHasFixedSize(true);
         mBinding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
     }
-
 
 
 }
