@@ -30,7 +30,7 @@
             android:singleLine="true"
             android:textAllCaps="true"
             android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
-            android:textColor="@color/title_text_color" />
+            android:textColor="@color/tt_color" />
 
 
     </androidx.appcompat.widget.Toolbar>

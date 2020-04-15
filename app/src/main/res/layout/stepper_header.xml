@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -99,7 +99,7 @@
                 android:fontFamily="@font/helveticaneue_regular"
                 android:gravity="center|top"
                 android:text="Step 3"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText" />
 
