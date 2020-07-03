@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GenericAdapter<T, V extends ViewDataBinding> extends RecyclerView.Adapter<GenericViewHolder> implements Filterable {
-
+    protected static final int ITEM_VIEW = 1;
     private List<T> listItems;
     private LayoutInflater mInflater;
 
@@ -61,5 +61,20 @@ public abstract class GenericAdapter<T, V extends ViewDataBinding> extends Recyc
         return getGenericFilter();
     }
 
+    public void clearAll() {
+        listItems.clear();
+        notifyDataSetChanged();
+    }
 
+    public T getItem(int position){
+        return listItems.get(position);
+    }
+
+    public LayoutInflater getInflater() {
+        return mInflater;
+    }
+
+    public List<T> getListItems() {
+        return listItems;
+    }
 }
