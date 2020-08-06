@@ -13,7 +13,7 @@ import java.util.List;
 
 public abstract class GenericPageScrollAdapter<T, V extends ViewDataBinding, SV extends ViewDataBinding> extends GenericAdapter<T, V> {
 
-    private static final int PAGE_SCROLL_VIEW = 2;
+    private static final int PAGE_SCROLL_VIEW = 3;
     private boolean isLoadingAdded = false;
     private int currentPage;
     private boolean isLoading;
@@ -138,14 +138,13 @@ public abstract class GenericPageScrollAdapter<T, V extends ViewDataBinding, SV 
     public void updateScrollPages(int totalPage, int currentPage, boolean isNextPage) {
         this.currentPage = currentPage;
         isLoading = false;
-
         if (isNextPage) {
-            togglePageLoader(false);
-            if (currentPage != totalPage) {
+
+            if (currentPage != totalPage)
                 togglePageLoader(true);
-            } else {
+            else
                 isLastPage = true;
-            }
+
         }
 
         if (!isNextPage && currentPage < totalPage) {

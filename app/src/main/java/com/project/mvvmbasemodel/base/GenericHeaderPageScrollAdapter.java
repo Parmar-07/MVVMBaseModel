@@ -9,11 +9,12 @@ import androidx.databinding.ViewDataBinding;
 
 import java.util.ArrayList;
 
-public abstract class GenericHeaderAdapter<T, V extends ViewDataBinding, HV extends ViewDataBinding> extends GenericAdapter<T, V> {
+public abstract class GenericHeaderPageScrollAdapter<T, V extends ViewDataBinding, HV extends ViewDataBinding, SV extends ViewDataBinding> extends GenericPageScrollAdapter<T, V, SV> {
+
 
     private static final int HEADER_VIEW = 2;
 
-    public GenericHeaderAdapter(Context _context) {
+    public GenericHeaderPageScrollAdapter(Context _context) {
         super(_context);
     }
 
@@ -23,15 +24,13 @@ public abstract class GenericHeaderAdapter<T, V extends ViewDataBinding, HV exte
 
     protected abstract T addNonBindHeaderItem();
 
-
     @Override
     public int getItemViewType(int position) {
-
-        if (position == 0) {
-            return HEADER_VIEW;
+        if (position != 0) {
+            return super.getItemViewType(position);
         }
-        return ITEM_VIEW;
 
+        return HEADER_VIEW;
     }
 
     @NonNull
@@ -61,6 +60,9 @@ public abstract class GenericHeaderAdapter<T, V extends ViewDataBinding, HV exte
         if (addNonBindHeaderItem() != null) {
             _listItems.add(0, addNonBindHeaderItem());
         }
+
         super.updateData(_listItems);
     }
+
+
 }

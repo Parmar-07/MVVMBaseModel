@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Spinner;
 
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
@@ -132,63 +131,6 @@ public abstract class GenericSpinnerAdapter<T, V extends ViewDataBinding> extend
     public boolean onTouch(View v, MotionEvent event) {
         return onValidate();
     }
-
-/*
-    private void initVarietySpinnerSpinner(Spinner spinner) {
-        GenericSpinnerAdapter varietySpinner = new GenericSpinnerAdapter<GetVarietyDataModel, ItemSpinnerBinding>(spinner) {
-            @Override
-            public int getLayoutId() {
-                return R.layout.item_spinner;
-            }
-
-            @Override
-            public void onBindView(ItemSpinnerBinding binding, GetVarietyDataModel item, int position) {
-                binding.setItem(item.getName());
-                if (item.getName().equalsIgnoreCase("select")) {
-                    binding.spinnerItem.setTextColor(ContextCompat.getColor(mContext, R.color.tertiaryText));
-                }
-            }
-
-            @Override
-            public void onBindDropDownView(ItemSpinnerBinding binding, GetVarietyDataModel item, int position) {
-                if (position==0) {
-                    binding.spinnerItem.setTextColor(ContextCompat.getColor(mContext, R.color.tertiaryText));
-                }
-            }
-
-            @Override
-            protected boolean onValidate() {
-                return validateSpinner();
-            }
-
-            @Override
-            protected void onItemSelected(GetVarietyDataModel data, ItemSpinnerBinding binding) {
-                int id = 0;
-                if (!data.getName().equalsIgnoreCase("select")) {
-                    id = data.getId();
-                }
-                sellToDGModel.setVariety(id);
-                if (data.getName().equalsIgnoreCase("select")) {
-                    binding.spinnerItem.setTextColor(ContextCompat.getColor(mContext, R.color.tertiaryText));
-                }
-            }
-        };
-    }
-
-
-    private void bindVarietiesSpinner(ArrayList<GetVarietyDataModel> values) {
-        if (values == null) {
-            values = new ArrayList<>();
-        }
-
-        GetVarietyDataModel select = new GetVarietyDataModel();
-        select.setName("Select");
-        values.add(0, select);
-        varietySpinner.updateData(values);
-        mBinding.varietySpinner.setSelection(0);
-
-    }
-*/
 
 
 }
